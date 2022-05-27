@@ -1,0 +1,18 @@
+h1{
+  font-size: 100px;
+  margin-left: 300px;
+}
+
+input{
+  text-align: center;
+  background-color: #B5DEFF;
+  width: 400px;
+}
+
+label{
+  font-weight: bold;
+}
+
+body{
+  background-color: #D7E9F7;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <metaname="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Medical Sample Collection Process Streamline</title>
+    
+       <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/14dab1683c.js" crossorigin="anonymous"></script>
+    
+    <!-- Custom CSS -->
+    <!-- <link rel="stylesheet" href="C:/Users/Raghu/Project_69/static/style.css"> -->
+    <link rel="stylesheet" href="{{url_for('static' , filename = './style.css')}}"
+  </head>
+  <body>
+    <h1 class="img"><i class="header center orange-text"></i> Medical Sample Collection Process Streamline</h1>
+    <br><br>
+    
+    <div class="container mb-3"><hr>
+      <form class="" action="{{url_for("prediction")}}" method="POST">
+        <!-- Patient Age -->
+          <label for="Patient_age">Enter Patient Age : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&emsp;&nbsp;&nbsp;
+          <input step="0" min="1" max="100" type="number" name="Patient_Age" placeholder=><br><br>
+            
+        <!-- Test_Booking_Time_HH_MM -->
+          <label for="Test_Booking_Time_HH_MM">Enter Test Booking Time HH:MM : </label>&emsp;&nbsp;&nbsp;&nbsp;
+          <input type="number" name="Test_Booking_Time_HH_MM" step="0" min="1" max="30" placeholder=><br><br>
+
+        <!-- Scheduled_Sample_Collection_Time_HH_MM -->
+          <label for="Scheduled_Sample_Collection_Time_HH_MM"> Enter Scheduled Sample Collection Time HH:MM : </label>&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&nbsp;&emsp;
+          <input type="number" name="Scheduled_Sample_Collection_Time_HH_MM" step="0" min="1" max="30" placeholder=><br><br>
+
+        <!-- Cut-off time_HH_MM  -->
+          <label for="Cut-off time_HH_MM">Enter Cut-off Time HH:MM : </label>&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;
+          <input type="number" name="Cut-off time_HH_MM" step="0" min="1" max="30" placeholder=><br><br>
+
+        <!-- Agent_ID -->
+          <label for="Agent_ID">Enter Agent ID : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&emsp;
+          <input type="number" name="Agent_ID" step="0" min="1" max="50" placeholder=><br><br>
+
+        <!-- Agent_Location_KM -->
+          <label for="Agent_Location_KM">Enter Agent Location KM : </label>&nbsp;&nbsp;&nbsp;
+          <input type="number" name="Agent_Location_KM" step="0" min="1" max="100" placeholder=><br><br>
+
+        <!-- Time_Taken_To_Reach_Patient_MM  -->
+          <label for="Time_Taken_To_Reach_Patient_MM">Enter Time Taken To Reach Patient MM : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+          <input type="number" name="Time_Taken_To_Reach_Patient_MM" step="0" min="1" max="500" placeholder=><br><br>
+
+        <!-- Time_For_Sample_Collection_MM"  -->
+          <label for="Time_For_Sample_Collection_MM">Enter Time For Sample Collection MM : </label>&emsp;&emsp;&emsp;&emsp;&emsp;
+          <input type="number" name="Time_For_Sample_Collection_MM" step="0" min="1" max="50" placeholder=><br><br>
+
+        <!-- Lab_Location_KM -->
+          <label for="Lab_Location_KM">Enter Lab Location KM : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <input type="number" name="Lab_Location_KM" step="0" min="1" max="100" placeholder=><br><br>
+        
+        <!-- Time_Taken_To_Reach_Lab_MM -->
+          <label for="Time_Taken_To_Reach_Lab_MM">Enter Time Taken To Reach Lab MM : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <input type="number" name="Time_Taken_To_Reach_Lab_MM" step="0" min="1" max="500" placeholder=><br><br>
+
+        <!-- Time_Taken_To_Reach_Lab_MM -->
+          <label for="Time_Taken_To_Reach_Lab_MM">Enter Time Taken To Reach Lab MM : </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          <input type="number" name="Time_Taken_To_Reach_Lab_MM" step="0" min="1" max="500" placeholder=><br><br>
+    
+           <!-- Patient_Gender -->
+        <label for="Patient_Gender">Enter Patient Gender: </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <select name="Patient_Gender">
+        <option value=""></option>
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+        </select>
+           <br/><br/>
+           <!-- Test_Name --> 
+        <label for="Test_Name">Enter Test Name: </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <select name="Test_Name">
+        <option value=""></option>
+        <option value="0">Acute kidney profile</option>
+        <option value="5">HbA1c</option>
+        <option value="9">Vitamin D-25Hydroxy</option>
+        <option value="8">TSH</option>
+        <option value="6">Lipid Profile</option>
+        <option value="2">Complete Urinalysis</option>
+        <option value="7">RTPCR</option>
+        <option value="4">H1N1</option>
+        <option value="3">Fasting blood sugar</option>
+        <option value="1">CBC</option>
+        </select>
+        <br/><br/>
+           <!-- Sample -->
+        <label for="Sample">Enter Sample: </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <select name="Sample">
+        <option value=""></option>
+        <option value="0">Blood</option>
+        <option value="2">Urine</option>
+        <option value="1">Swab</option>
+        </select>
+        <br/><br/>
+           <!-- Way_Of_Storage_Of_Sample -->
+        <label for="Way_Of_Storage_Of_Sample">Way 0f Storage of Sample: </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <select name="Way_Of_Storage_Of_Sample">
+        <option value=""></option>
+        <option value="0">Advanced</option>
+        <option value="1">Normal</option>
+        </select>
+        <br/><br/>
+           <!-- Cut-off Schedule` -->
+        <label for="Cut-off Schedule">Cut-off Schedule: </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <select name="Cut-off Schedule">
+        <option value=""></option>
+        <option value="1">Sample by 5pm</option>
+        <option value="0">Daily</option>
+        </select>
+        <br/><br/>
+           <!-- Traffic_Conditions` -->
+        <label for="Traffic_Conditions">Traffic Conditions: </label>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <select name="Traffic_Conditions">
+        <option value=""></option>
+        <option value="1">Low Traffic</option>
+        <option value="2">Medium Traffic</option>
+        <option value="0">High Traffic</option>
+        </select>
+        <br/><br/>
+        
+           <!-- button -->
+        <button type="submit" class="btn btn-outline-primary btn-lg">Predict</button>
+            <br>
+            <br>
+            <h1 class="navbar-brand">{{ output }}</h1>
+        
+      </form>
+
+    </div>
+    
+  </body>
+</html>
